@@ -10,7 +10,7 @@ export default class Accordin {
   }
 
   activeAcordin(){
-    this.acordinList.forEach((item) => { item.addEventListener("click", this.activeAcordin(item)); });
+    this.acordinList.forEach((item) => { item.addEventListener("click", () => this.activeAcordin(item)); });
   }
 
   /// iniciar função
