@@ -1,16 +1,23 @@
-export default function initaccordin() {
-  const acordinList = document.querySelectorAll(".js-acordion dt");
-  const activeclass = "ativo";
-
-  function activeAcordin() {
-    this.classList.toggle(activeclass);
-    this.nextElementSibling.classList.toggle(activeclass);
+export default class Accordin {
+  constructor(list){
+   this.acordinList = document.querySelectorAll(list);
+   this.activeclass = 'ativo'
+  }
+  
+  toggleAccordion(item) {
+    item.classList.toggle(this.activeclass);
+    item.nextElementSibling.classList.toggle(this.activeclass);
   }
 
-  if (acordinList.length) {
-    acordinList[0].classList.add(activeclass);
-    acordinList[0].nextElementSibling.classList.add(activeclass);
+  activeAcordin(){
+    this.acordinList.forEach((item) => { item.addEventListener("click", () => this.activeAcordin(item)); });
+  }
 
-    acordinList.forEach((item) => { item.addEventListener("click", activeAcordin); });
+  /// iniciar função
+  init(){
+    if (this.acordinList.length){
+      this.toggleAccordion(this.acordinList[0])
+      this.activeAcordin()
+    }
   }
 }
