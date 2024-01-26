@@ -9,14 +9,14 @@ import initFuncionamento from "./module/funcionamento.js";
 import initFetchapi from "./module/fetchapi.js";
 import initFetchBitcoin from "./module/fetch-bitcoin.js";
 
-const scrollsuave = new ScrollSuave('[data-menu="suave" a[href^="#"');
+const tab = new TabNav();
+tab.init()
+
+const scrollsuave = new ScrollSuave('[data-menu="list"] a[href^="#"]');
 scrollsuave.init()
 
 const accordinlist = new Accordin(".js-acordion dt")
 accordinlist.init()
-
-
-initTabNav();
 initAnimacaoScroll();
 initModal();
 initDropdown();
