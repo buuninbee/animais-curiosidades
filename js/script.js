@@ -7,7 +7,7 @@ import initDropdown from "./module/dropdown.js";
 import initMenuMobile from "./module/menu-mobile.js";
 import initFuncionamento from "./module/funcionamento.js";
 import fetchAnimais from "./module/fetchapi.js";
-import initFetchBitcoin from "./module/fetch-bitcoin.js";
+import FetchBitcoin from "./module/fetch-bitcoin.js";
 
 
 const tab = new TabNav();
@@ -24,8 +24,9 @@ modal.init()
 
 fetchAnimais("../../animaisapi.json", ".numeros-grid")
 
+FetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
+
 initAnimacaoScroll();
 initDropdown();
 initMenuMobile();
 initFuncionamento();
-initFetchBitcoin();
