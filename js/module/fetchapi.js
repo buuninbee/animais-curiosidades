@@ -1,4 +1,4 @@
-import initAnimaNumeros from "./anima-numeros.js";
+import AnimaNumeros from "./anima-numeros.js";
 
 export default function initFetchapi() {
 
@@ -20,5 +20,6 @@ export default function initFetchapi() {
   }
   fetchapi();
 
-  initAnimaNumeros();
+  const anima = new AnimaNumeros("[data-numero]",".numeros", "ativo");
+  anima.init()
 }
