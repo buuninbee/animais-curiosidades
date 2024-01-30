@@ -1,13 +1,15 @@
+import debounce from "./debounce";
+
 export default class AnimacaoScroll {
   constructor(sections){
     this.sections = document.querySelectorAll(sections);
     this.windowMetade = window.innerHeight * 0.6;
 
-    this.checkDistance = this.checkDistance.bind(this)
+    this.checkDistance = debounce(this.checkDistance.bind(this), 50)
   }
 
   getDistance(){
-    this.distance = [ ...this.sections].map((section) => {
+    this.distance = [...this.sections].map((section) => {
       const offset = section.offsetTop;
       return{
         element: section,
