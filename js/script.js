@@ -5,7 +5,7 @@ import Modal from "./module/modal.js";
 import AnimacaoScroll from "./module/scroll-animacao.js";
 import Dropdown from "./module/dropdown.js";
 import MenuMobile from "./module/menu-mobile.js";
-import initFuncionamento from "./module/funcionamento.js";
+import Funcionamento from "./module/funcionamento.js";
 import fetchAnimais from "./module/fetchapi.js";
 import FetchBitcoin from "./module/fetch-bitcoin.js";
 
@@ -22,10 +22,6 @@ accordinlist.init()
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]')
 modal.init()
 
-fetchAnimais("../../animaisapi.json", ".numeros-grid")
-
-FetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
-
 const anima = new AnimacaoScroll('[data-anime="scroll"]');
 anima.init()
 
@@ -35,4 +31,9 @@ dropDown.init()
 const menumobile = new MenuMobile('[data-menu="button"', '[data-menu="list"');
 menumobile.init()
 
-initFuncionamento();
+const funcionamento = new Funcionamento("[data-semana]");
+funcionamento.init()
+
+fetchAnimais("./animaisapi.json", ".numeros-grid")
+
+FetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
